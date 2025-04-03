@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Tracker</title>
+</head>
+<body>
+    <h1>Location Tracking...</h1>
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                window.location.href = "https://yourserver.com/save_location?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    </script>
+</body>
+</html>
